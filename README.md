@@ -1,0 +1,2 @@
+# hugo-deploy-test
+HugoとGitHubPagesのテスト
