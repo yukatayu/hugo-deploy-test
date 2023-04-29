@@ -21,3 +21,5 @@ type: post
 静的コンテンツ(画像等)については， `static/` 以下に配置する。
 
 about ページの gallery については，`data/gallery.yml` に一覧を記述する。
+
+GitHubのリポジトリ設定で， Actions > General > Workflow permissions で，書き込み権限を与える。
