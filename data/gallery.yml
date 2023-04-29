@@ -1,0 +1,15 @@
+enable : true
+gallery:
+  - image : "images/gallery/star_blue_checked.png"
+  - image : "images/gallery/star_blue_filled.png"
+  - image : "images/gallery/star_blue_empty.png"
+  - image : "images/gallery/star_red_checked.png"
+  - image : "images/gallery/star_red_filled.png"
+  - image : "images/gallery/star_red_empty.png"
+  - image : "images/gallery/star_gray_checked.png"
+  - image : "images/gallery/star_gray_filled.png"
+  - image : "images/gallery/star_gray_empty.png"
+  - image : "images/gallery/star_green_checked.png"
+  - image : "images/gallery/star_green_filled.png"
+  - image : "images/gallery/star_green_empty.png"
+
