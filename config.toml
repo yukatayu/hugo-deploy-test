@@ -1,5 +1,5 @@
 theme = "liva"
 baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+languageCode = "ja-jp"
+title = "静的ページのデプロイテスト"
 
