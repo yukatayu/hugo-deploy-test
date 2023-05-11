@@ -62,8 +62,8 @@ URL = "works/"
 weight = 2
 
 [[menu.main]]
-name = "Contact"
-URL = "contact/"
+name = "Links"
+URL = "links/"
 weight = 3
 
 ### footer menu ###
@@ -78,8 +78,8 @@ URL = "works/"
 weight = 2
 
 [[menu.footer]]
-name = "Contact"
-URL = "contact/"
+name = "Links"
+URL = "links/"
 weight = 3
 
 
