@@ -7,8 +7,25 @@ languageCode = "ja-jp"
 title = "静的ページのデプロイテスト"
 
 summaryLength = "10"  # 最初の10単語をsummaryとする
-paginate = 6
-disqusShortname = ""
+paginate = 10
+disqusShortname = ""  # コメント機能を使わない限りは関係ない
+
+pygmentsUseClasses = true
+pygmentsCodefences = true
+
+enableRobotsTXT = false
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+	[markup.goldmark]
+		[markup.goldmark.renderer]
+			unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]
@@ -16,6 +33,15 @@ home = ["HTML", "RSS", "JSON"]
 [taxonomies]
 tag = "tags"
 category = "categories"
+
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = true
+
 
 ############################# Plugins ##############################
 [params.plugins]
@@ -51,36 +77,48 @@ URL = "plugins/search/search.js"
 [menu]
 
 ### main menu ###
-[[menu.main]]
-name = "About"
-URL = "about/"
-weight = 1
 
 [[menu.main]]
 name = "Works"
 URL = "works/"
+weight = 1
+
+[[menu.main]]
+name = "Blog"
+URL = "blog/"
 weight = 2
+
+[[menu.main]]
+name = "About"
+URL = "about/"
+weight = 3
 
 [[menu.main]]
 name = "Links"
 URL = "links/"
-weight = 3
+weight = 4
 
 ### footer menu ###
-[[menu.footer]]
-name = "About"
-URL = "about/"
-weight = 1
 
 [[menu.footer]]
 name = "Works"
 URL = "works/"
+weight = 1
+
+[[menu.footer]]
+name = "Blog"
+URL = "blog/"
 weight = 2
+
+[[menu.footer]]
+name = "About"
+URL = "about/"
+weight = 3
 
 [[menu.footer]]
 name = "Links"
 URL = "links/"
-weight = 3
+weight = 4
 
 
 #################### default parameters ################################
@@ -147,4 +185,12 @@ title = "linkedin"
 icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
 link = "#"
 
+[[params.social]]
+title = "GitHub"
+icon = "ti-github"
+link = "https://github.com/yukatayu/"
 
+[[params.social]]
+title = "RSS"
+icon = "ti-rss-alt"
+link = "https://localhost/index.xml"

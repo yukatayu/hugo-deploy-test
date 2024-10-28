@@ -14,6 +14,7 @@ categories: [ "hugo" ]
 tags: [ "hello", "world" ]
 image: images/promotion.png
 type: post
+summary: "tl;dr"
 ```
 
 - `type: post` の物は，トップページの一覧の部分に表示される
@@ -27,5 +28,11 @@ GitHubのリポジトリ設定で， Actions > General > Workflow permissions �
 
 ローカルでの動作確認は
 ```shell
-hugo serve --disableFastRender
+hugo serve --disableFastRender --buildDrafts
 ```
+
+`date:` に入れる時間は， [これ](https://yukatayu.tech/time.html) で取得すると早い
+
+## やるべきこと
+- `static/robots.txt` の `Sitemap` の URL を更新
+- `config.toml` の `baseURL`, `title`, その他書き換えられそうな箇所を更新
