@@ -1,0 +1,449 @@
+/* card */
+.card {
+  border: 0;
+  border-radius: 0;
+
+  &-header,
+  &-footer,
+  &-img,
+  &-img-top {
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+/* /card */
+
+.featured-post {
+  .card-title {
+    margin-left: -10%;
+
+    @include tablet {
+      margin-left: 0;
+      font-size: 30px;
+    }
+  }
+
+  &-slider {
+    @media screen and (min-width: 600px) {
+      .slick-dots {
+        position: absolute;
+        height: 100%;
+        right: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+
+        li {
+          flex: 1 1 auto;
+          position: relative;
+          list-style-type: none;
+
+          button {
+            position: absolute;
+            padding: 0;
+            border: 0;
+            background: $border-color;
+            color: transparent;
+            overflow: hidden;
+            width: 1px;
+            height: 100%;
+            transition: 0s;
+          }
+
+          &.slick-active {
+            button {
+              background: $primary-color;
+              width: 6px;
+              left: -2px;
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 599px) {
+      .slick-dots {
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        right: 0;
+        bottom: -40px;
+        display: flex;
+        padding: 0;
+
+        li {
+          flex: 1 1 auto;
+          position: relative;
+          list-style-type: none;
+          width: 100%;
+          height: 100%;
+
+          button {
+            position: absolute;
+            padding: 0;
+            border: 0;
+            background: $border-color;
+            color: transparent;
+            overflow: hidden;
+            width: 100%;
+            height: 1px;
+          }
+
+          &.slick-active {
+            button {
+              background: $primary-color;
+              top: -2px;
+              height: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.post-meta {
+  span {
+    color: #444;
+    font-weight: 500;
+  }
+}
+
+/* recent post */
+.recent-post-thumb {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.small-post-border {
+  &:not(:last-child) {
+    border-right: 1px solid $border-color;
+
+    @include desktop {
+      border-right: 0;
+      border-bottom: 1px solid $border-color;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+/* widget */
+.widgets {
+  padding-left: 25px;
+  border-left: 1px solid #eee;
+  @include desktop {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+.widget {
+  text-align: center;
+  margin-bottom: 50px;
+
+  &-title {
+    display: inline-block;
+    border-top: .5px solid $primary-color;
+    border-bottom: .5px solid $primary-color;
+    padding: 10px 0;
+    margin-bottom: 20px;
+  }
+
+  li {
+    margin-bottom: 10px;
+
+    a {
+      color: $text-color;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.social-links {
+  li {
+    a {
+      height: 35px;
+      width: 35px;
+      background: $primary-color;
+      color: $white;
+      display: block;
+      line-height: 35px;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+/* pagination */
+.pagination {
+  justify-content: center;
+
+  .page-item {
+
+    .page-link {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      color: $primary-color;
+      border-top: 0;
+      border-bottom: 0;
+
+      &:hover {
+        background: $primary-color;
+        color: $white;
+      }
+    }
+
+    &:first-child,
+    &:last-child {
+      .page-link {
+        border-radius: 0;
+      }
+    }
+
+    &.active {
+      .page-link {
+        background: $white;
+        color: $text-color;
+        border: 1px solid $primary-color;
+      }
+    }
+  }
+}
+
+.author-thumb-sm {
+  max-height: 165px;
+  max-width: 165px;
+}
+
+
+/* markdown style */
+.content {
+  * {
+    margin-bottom: 20px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 10px;
+  }
+
+  ol {
+    padding-left: 20px;
+  }
+
+  ul {
+    padding-left: 0;
+
+    li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 15px;
+      /*
+      list-style-type: none;
+
+      &::before {
+        position: absolute;
+        content: "\e71b";
+        font-family: $icon-font;
+        font-size: 14px;
+        left: 0;
+        top: 1px;
+        color: $primary-color;
+        transition: .3s ease;
+      }
+      */
+    }
+  }
+
+  table {
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+
+    border: 1px solid #dee2e6;
+
+    th,
+    td {
+      padding: .75rem;
+      vertical-align: top;
+      border: 1px solid #dee2e6
+    }
+
+    thead {
+      background: darken($color: $gray, $amount: 2);
+    }
+
+    tbody {
+      background: $gray;
+
+      td {
+        text-align: left !important;
+      }
+    }
+  }
+
+
+  blockquote {
+    padding: 20px;
+    background: $gray;
+    border-left: 3px solid $primary-color;
+
+    p {
+      margin-bottom: 0;
+      color: $text-color-dark;
+      font-style: italic !important;
+    }
+  }
+
+
+  pre {
+    padding: 10px 20px;
+    /* background: $gray; */
+
+    code {
+      border: 0;
+      /* background: transparent; */
+      padding: 0;
+    }
+  }
+
+  a {
+    color: $primary-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  code {
+    padding: 3px 5px;
+    background: $gray;
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    /* color: $text-color-dark; */
+    * {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  mjx-container[jax="CHTML"] * {
+      margin-bottom: 0;
+  }
+
+}
+
+footer a {
+  @extend .text-dark;
+  &:hover {
+    color: $primary-color !important;
+    text-decoration: underline;
+  }
+}
+
+/* /markdown style */
+
+/* syntax hilight (monokai) */
+/* Background */ .bg { color:#f8f8f2;background-color:#272822; }
+/* PreWrapper */ .chroma { color:#f8f8f2;background-color:#272822; }
+/* Other */ .chroma .x {  }
+/* Error */ .chroma .err { color:#960050;background-color:#1e0010 }
+/* CodeLine */ .chroma .cl {  }
+/* LineLink */ .chroma .lnlinks { outline:none;text-decoration:none;color:inherit }
+/* LineTableTD */ .chroma .lntd { vertical-align:top;padding:0;margin:0;border:0; }
+/* LineTable */ .chroma .lntable { border-spacing:0;padding:0;margin:0;border:0; }
+/* LineHighlight */ .chroma .hl { background-color:#3c3d38 }
+/* LineNumbersTable */ .chroma .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f }
+/* LineNumbers */ .chroma .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f }
+/* Line */ .chroma .line { display:flex; }
+/* Keyword */ .chroma .k { color:#66d9ef }
+/* KeywordConstant */ .chroma .kc { color:#66d9ef }
+/* KeywordDeclaration */ .chroma .kd { color:#66d9ef }
+/* KeywordNamespace */ .chroma .kn { color:#f92672 }
+/* KeywordPseudo */ .chroma .kp { color:#66d9ef }
+/* KeywordReserved */ .chroma .kr { color:#66d9ef }
+/* KeywordType */ .chroma .kt { color:#66d9ef }
+/* Name */ .chroma .n {  }
+/* NameAttribute */ .chroma .na { color:#a6e22e }
+/* NameBuiltin */ .chroma .nb {  }
+/* NameBuiltinPseudo */ .chroma .bp {  }
+/* NameClass */ .chroma .nc { color:#a6e22e }
+/* NameConstant */ .chroma .no { color:#66d9ef }
+/* NameDecorator */ .chroma .nd { color:#a6e22e }
+/* NameEntity */ .chroma .ni {  }
+/* NameException */ .chroma .ne { color:#a6e22e }
+/* NameFunction */ .chroma .nf { color:#a6e22e }
+/* NameFunctionMagic */ .chroma .fm {  }
+/* NameLabel */ .chroma .nl {  }
+/* NameNamespace */ .chroma .nn {  }
+/* NameOther */ .chroma .nx { color:#a6e22e }
+/* NameProperty */ .chroma .py {  }
+/* NameTag */ .chroma .nt { color:#f92672 }
+/* NameVariable */ .chroma .nv {  }
+/* NameVariableClass */ .chroma .vc {  }
+/* NameVariableGlobal */ .chroma .vg {  }
+/* NameVariableInstance */ .chroma .vi {  }
+/* NameVariableMagic */ .chroma .vm {  }
+/* Literal */ .chroma .l { color:#ae81ff }
+/* LiteralDate */ .chroma .ld { color:#e6db74 }
+/* LiteralString */ .chroma .s { color:#e6db74 }
+/* LiteralStringAffix */ .chroma .sa { color:#e6db74 }
+/* LiteralStringBacktick */ .chroma .sb { color:#e6db74 }
+/* LiteralStringChar */ .chroma .sc { color:#e6db74 }
+/* LiteralStringDelimiter */ .chroma .dl { color:#e6db74 }
+/* LiteralStringDoc */ .chroma .sd { color:#e6db74 }
+/* LiteralStringDouble */ .chroma .s2 { color:#e6db74 }
+/* LiteralStringEscape */ .chroma .se { color:#ae81ff }
+/* LiteralStringHeredoc */ .chroma .sh { color:#e6db74 }
+/* LiteralStringInterpol */ .chroma .si { color:#e6db74 }
+/* LiteralStringOther */ .chroma .sx { color:#e6db74 }
+/* LiteralStringRegex */ .chroma .sr { color:#e6db74 }
+/* LiteralStringSingle */ .chroma .s1 { color:#e6db74 }
+/* LiteralStringSymbol */ .chroma .ss { color:#e6db74 }
+/* LiteralNumber */ .chroma .m { color:#ae81ff }
+/* LiteralNumberBin */ .chroma .mb { color:#ae81ff }
+/* LiteralNumberFloat */ .chroma .mf { color:#ae81ff }
+/* LiteralNumberHex */ .chroma .mh { color:#ae81ff }
+/* LiteralNumberInteger */ .chroma .mi { color:#ae81ff }
+/* LiteralNumberIntegerLong */ .chroma .il { color:#ae81ff }
+/* LiteralNumberOct */ .chroma .mo { color:#ae81ff }
+/* Operator */ .chroma .o { color:#f92672 }
+/* OperatorWord */ .chroma .ow { color:#f92672 }
+/* Punctuation */ .chroma .p {  }
+/* Comment */ .chroma .c { color:#75715e }
+/* CommentHashbang */ .chroma .ch { color:#75715e }
+/* CommentMultiline */ .chroma .cm { color:#75715e }
+/* CommentSingle */ .chroma .c1 { color:#75715e }
+/* CommentSpecial */ .chroma .cs { color:#75715e }
+/* CommentPreproc */ .chroma .cp { color:#75715e }
+/* CommentPreprocFile */ .chroma .cpf { color:#75715e }
+/* Generic */ .chroma .g {  }
+/* GenericDeleted */ .chroma .gd { color:#f92672 }
+/* GenericEmph */ .chroma .ge { font-style:italic }
+/* GenericError */ .chroma .gr {  }
+/* GenericHeading */ .chroma .gh {  }
+/* GenericInserted */ .chroma .gi { color:#a6e22e }
+/* GenericOutput */ .chroma .go {  }
+/* GenericPrompt */ .chroma .gp {  }
+/* GenericStrong */ .chroma .gs { font-weight:bold }
+/* GenericSubheading */ .chroma .gu { color:#75715e }
+/* GenericTraceback */ .chroma .gt {  }
+/* GenericUnderline */ .chroma .gl {  }
+/* TextWhitespace */ .chroma .w {  }
+
