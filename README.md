@@ -6,6 +6,8 @@ HugoとGitHubPagesのテスト
 tagとcategoryの設定
 
 https://gohugo.io/content-management/front-matter/
+
+layouts 以下を少しカスタマイズしてあるため，以下の項目は全て指定するのを推奨します。
 ```yaml
 date: "2015-09-05T16:40:41+09:00"
 draft: false
